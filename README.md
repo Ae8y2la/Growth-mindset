@@ -4,8 +4,6 @@ In this project, i made a application where user can add their growth goals and 
 it boost our user motivation and make them feel safer and cheerfull,
 by giving them daily motivational affirmation!!
 
-**LINK**:https://growth-mindset-abch.streamlit.app/
-
 💮💮
 
 
