@@ -2,7 +2,7 @@ import streamlit as st
 import random
 from datetime import datetime, timedelta
 
-# Sample data
+# data
 affirmations = [
     "I am capable of learning and growing every day.",
     "Challenges help me grow stronger and smarter.",
@@ -39,7 +39,7 @@ def update_streak():
         if today == last_activity + timedelta(days=1):
             st.session_state.streak += 1
         elif today > last_activity + timedelta(days=1):
-            st.session_state.streak = 1  # Reset streak if missed a day
+            st.session_state.streak = 1  
     else:
         st.session_state.streak = 1
     st.session_state.last_activity = datetime.today()
@@ -220,10 +220,10 @@ h6 {
 </style>
 """
 
-# Inject custom CSS
+
 st.markdown(custom_css, unsafe_allow_html=True)
 
-# Streamlit app
+
 st.title("🌱 Growth Mindset Challenge 🌱")
 st.sidebar.header("Menu")
 menu = st.sidebar.radio("Choose an activity:", ["Home", "Daily Affirmation", "Set Goals", "Reflect", "View Progress"])
@@ -246,10 +246,10 @@ elif menu == "Daily Affirmation":
         st.session_state.affirmations.append((datetime.today().strftime("%Y-%m-%d"), affirmation))
         update_streak()
         st.success(f"**{affirmation}**")
-        show_stars()  # Show falling stars effect
+        show_stars()
     if st.session_state.affirmations:
         st.write("### Your Recent Affirmations:")
-        for date, aff in st.session_state.affirmations[-5:]:  # Show last 5 affirmations
+        for date, aff in st.session_state.affirmations[-5:]: 
             st.write(f"📅 **{date}**: {aff}")
 
 elif menu == "Set Goals":
@@ -261,8 +261,7 @@ elif menu == "Set Goals":
             st.session_state.goals.append((datetime.today().strftime("%Y-%m-%d"), goal))
             update_streak()
             st.success("Goal added! 🚀")
-            show_balloons()  # Show balloon effect
-        else:
+            show_balloons() 
             st.warning("Please enter a goal.")
     if st.session_state.goals:
         st.write("### Your Goals:")
@@ -280,12 +279,12 @@ elif menu == "Reflect":
             st.session_state.reflections.append((datetime.today().strftime("%Y-%m-%d"), reflection))
             update_streak()
             st.success("Reflection saved! 🌟")
-            show_stars()  # Show falling stars effect
+            show_stars() 
         else:
             st.warning("Please write your reflection.")
     if st.session_state.reflections:
         st.write("### Your Recent Reflections:")
-        for date, ref in st.session_state.reflections[-5:]:  # Show last 5 reflections
+        for date, ref in st.session_state.reflections[-5:]:  
             st.write(f"📅 **{date}**: {ref}")
 
 elif menu == "View Progress":
@@ -311,7 +310,7 @@ elif menu == "View Progress":
         for date, ref in st.session_state.reflections:
             st.write(f"📅 **{date}**: {ref}")
 
-# Fun interactivity
+# A little bit in the end
 st.sidebar.write("---")
 st.sidebar.header("Fun Stats")
 st.sidebar.write(f"🔥 **Current Streak:** {st.session_state.streak} days")
@@ -319,3 +318,18 @@ if st.session_state.streak >= 3:
     st.sidebar.write("🎉 You're on a roll! Keep it up!")
 if st.session_state.streak >= 7:
     st.sidebar.write("🏆 Wow! You're a Growth Mindset Champion!")
+
+# Securing line (copyright notice)
+st.markdown(
+    """
+    <div style="text-align: center; margin-top: 50px; color: #8F6246; font-size: 14px;">
+        © 2025 Aeyla Naseer. This code is protected under copyright law. Unauthorized copying is prohibited.
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+# Print statement (optional, for terminal/logging purposes)
+print("© 2025 Aeyla Naseer. This code is protected under copyright law. Unauthorized copying is prohibited.")
+        
+ # ----------------------------------------------------THE-END---------------------------------------------------------------- 
