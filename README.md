@@ -15,4 +15,4 @@ by giving them daily motivational affirmation!!
 
 💮💮
 
-**REACH ME OUT📧:"aeylanaseer@gmail.com"**
+**REACH ME OUT ON DISCORD 👾:"user6790.h"**
